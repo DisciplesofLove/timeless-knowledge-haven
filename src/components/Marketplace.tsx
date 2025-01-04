@@ -38,12 +38,12 @@ const SAMPLE_BOOKS = [
 
 export const Marketplace = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-[#1A1F2C] via-[#7E69AB] to-[#9b87f5]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-montserrat font-bold text-eternal-blue text-center mb-8">
+        <h2 className="text-4xl font-montserrat font-bold text-white text-center mb-8">
           Digital Marketplace
         </h2>
-        <p className="text-xl text-gray-600 text-center mb-12 font-merriweather max-w-2xl mx-auto">
+        <p className="text-xl text-gray-200 text-center mb-12 font-merriweather max-w-2xl mx-auto">
           Discover and collect timeless knowledge preserved on the blockchain
         </p>
         
@@ -53,10 +53,10 @@ export const Marketplace = () => {
             <input
               type="text"
               placeholder="Search archives..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-eternal-gold"
+              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D946EF]"
             />
           </div>
-          <Button variant="outline" className="w-full md:w-auto">
+          <Button variant="outline" className="w-full md:w-auto bg-white/10 text-white hover:bg-white/20">
             <Filter className="mr-2" />
             Filter
           </Button>
@@ -64,20 +64,20 @@ export const Marketplace = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SAMPLE_BOOKS.map((book) => (
-            <div key={book.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
-              <div className="aspect-w-3 aspect-h-4 bg-gray-100">
+            <div key={book.id} className="bg-white/10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105 border border-white/20">
+              <div className="aspect-w-3 aspect-h-4 bg-gray-800">
                 <img src={book.image} alt={book.title} className="object-cover w-full h-48" />
               </div>
               <div className="p-4">
-                <h3 className="font-montserrat font-semibold text-lg mb-1 text-eternal-blue">
+                <h3 className="font-montserrat font-semibold text-lg mb-1 text-white">
                   {book.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-2">{book.author}</p>
+                <p className="text-gray-300 text-sm mb-2">{book.author}</p>
                 <div className="flex justify-between items-center">
-                  <span className="bg-eternal-blue/10 text-eternal-blue px-2 py-1 rounded-full text-sm">
+                  <span className="bg-[#D946EF]/20 text-[#D946EF] px-2 py-1 rounded-full text-sm">
                     {book.category}
                   </span>
-                  <span className="font-semibold text-eternal-gold">{book.price}</span>
+                  <span className="font-semibold text-[#9b87f5]">{book.price}</span>
                 </div>
               </div>
             </div>
