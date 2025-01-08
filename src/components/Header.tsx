@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Infinity } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -6,7 +6,11 @@ export const Header = () => {
     <header className="bg-gradient-to-r from-[#1A1F2C] to-[#9b87f5] text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-3">
+            <Infinity 
+              className="w-8 h-8 text-[#D946EF] animate-glow-pulse" 
+              strokeWidth={2.5}
+            />
             <span className="text-2xl font-montserrat font-bold bg-gradient-to-r from-[#D946EF] to-[#8B5CF6] text-transparent bg-clip-text">
               Eternal Archive
             </span>
