@@ -16,11 +16,14 @@ export const Header = () => {
             <Link to="/" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
               Home
             </Link>
-            <Link to="/features" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
-              Features
-            </Link>
             <Link to="/marketplace" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
-              Marketplace
+              Browse
+            </Link>
+            <Link to="/marketplace/create" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
+              Create Listing
+            </Link>
+            <Link to="/marketplace/my-listings" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
+              My Listings
             </Link>
             <Link to="/community" className="font-montserrat text-sm hover:text-[#D946EF] transition-colors">
               Community
