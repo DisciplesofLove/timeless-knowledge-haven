@@ -23,8 +23,6 @@ export const Header = () => {
 
   const handleConnectWallet = async () => {
     try {
-      // This is a placeholder for actual wallet connection logic
-      // You would typically use a library like ethers.js or web3.js here
       setIsWalletConnected(true);
       toast({
         title: "Wallet Connected",
@@ -48,7 +46,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-[#1A1F2C] to-[#9b87f5] text-white">
+    <header className="bg-gradient-to-r from-[#1A1F2C] to-[#9b87f5] text-white fixed w-full top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
@@ -105,29 +103,31 @@ export const Header = () => {
               </Button>
             )}
 
-            <Sheet>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-gradient-to-b from-[#1A1F2C] to-[#9b87f5] border-purple-500">
-                <SheetHeader>
-                  <SheetTitle className="text-white">Menu</SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col space-y-4 mt-8">
-                  {menuItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className="text-white hover:text-[#D946EF] transition-colors py-2 px-4 rounded-md hover:bg-white/10"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+            <div className="block md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="bg-gradient-to-b from-[#1A1F2C] to-[#9b87f5] border-purple-500">
+                  <SheetHeader>
+                    <SheetTitle className="text-white">Menu</SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col space-y-4 mt-8">
+                    {menuItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="text-white hover:text-[#D946EF] transition-colors py-2 px-4 rounded-md hover:bg-white/10"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
